@@ -6,7 +6,7 @@ from rclpy.node import Node
 from std_msgs.msg import Float64, Bool, Empty
 from geometry_msgs.msg import Point
 
-from sofar_cannon_simulator_interface.srv import Ballistics, Targets
+#from sofar_cannon_simulator_interface.srv import Ballistics, Targets
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -34,10 +34,10 @@ class CannonSimNode(Node):
         self.create_subscription(Empty, "/cannon/shoot", self.on_shoot_cmd, 10)
 
         # Service for retrieving target locations
-        self.create_service(Targets, "/world/targets", self.on_targets_srv_request)
+        #self.create_service(Targets, "/world/targets", self.on_targets_srv_request)
         
         # Service for checking whether target is reachable (returns either a valid angle or -1 if unreachable)
-        self.create_service(Ballistics, "/cannon/ballistics", self.on_ballistics_srv_request)
+        #self.create_service(Ballistics, "/cannon/ballistics", self.on_ballistics_srv_request)
         
 
     def on_state_timer_elapsed(self):
@@ -54,6 +54,7 @@ class CannonSimNode(Node):
     def on_shoot_cmd(self, msg: Empty):
         self.sim.shoot_cannon()
 
+    '''
     def on_targets_srv_request(self, request: Targets.Request, response: Targets.Response):
         for target in self.sim.targets:
             target_msg = Float64()
@@ -64,7 +65,7 @@ class CannonSimNode(Node):
     def on_ballistics_srv_request(self, request: Ballistics.Request, response: Ballistics.Response):
         response.desired_angle.data = float(self.sim.find_target_angle(request.target.data))
         return response
-    
+    '''
   
 def main(args=None):
     
