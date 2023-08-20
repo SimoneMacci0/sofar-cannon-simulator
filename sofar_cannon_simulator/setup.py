@@ -26,8 +26,8 @@ setup(
     entry_points={
         'console_scripts': [
             'cannon_sim_node = sofar_cannon_simulator.cannon_sim_node:main',
-            'cannon_controller_node = sofar_cannon_simulator.cannon_controller:main',
-            'cannon_logic_node = sofar_cannon_simulator.cannon_logic:main'
+            #'cannon_controller_node = sofar_cannon_simulator.cannon_controller:main',
+            #'cannon_logic_node = sofar_cannon_simulator.cannon_logic:main'
         ],
     },
 )
