@@ -28,7 +28,7 @@ According to which portion of the exam you need to take, you can focus on specif
        2) **/cannon/fire_speed**: *Bool* message used to change the firing speed of the cannonballs. Specifically, set the value to *True* to increase the speed by a fixed amount and *False* to decrease it. The firing speed is not directly controllable by the used and is strictly related to the computation of the ballistics to find out whether the target is reachable or not (read further below).
        3) **/cannon/shoot**: *Empty* message used to signal the cannon to fire a new cannonball, with the current orientation and firing speed.
     2. *Published Topic*
-       1) **/cannon/angle**: *Float64* message representing the current angular position of the cannon (in radians). Used for control purposed.
+       1) **/cannon/angle**: *Float64* message representing the current angular position of the cannon (in radians). Used for control purposes.
     3. *Exposed Services*
        1) **/world/targets**: allows for retrieving the locations of the targets.
        2) **/cannon/ballistics**: allows for computing the ballistics given a input target to hit. Specifically, the service computes the desired shooting angle for the cannon, making sure that the projectile will hit the specified target. If the target is reachable (with the current firing speed), the service returns the corresponding angle for the cannon (in the interval [0, pi/2]). Conversely, if the target is not reachable with any angular configuration, the service return -1.
