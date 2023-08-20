@@ -1,0 +1,6 @@
+.vscode/*
+sofar_cannon_simulator/launch/*
+sofar_cannon_simulator/sofar_cannon_simulator/__pycache__
+sofar_cannon_simulator/sofar_cannon_simulator/cannon_controller.py
+sofar_cannon_simulator/sofar_cannon_simulator/cannon_logic.py
+sofar_cannon_simulator_interface/srv/*
